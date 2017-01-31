@@ -1,0 +1,289 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>Raccoon's comics page</title>
+<meta name="viewport" content="width=device-width, initial-scale=0.25" />
+<style>
+header {
+    background-color:#000;
+    color:#ffffff;
+    padding:0.5em;
+}
+nav {
+    background-color:#404040;
+    list-style-type: none;
+    margin:0;
+    padding:0;
+    width:15%;
+    float:left;
+}
+li a{
+    display: block;
+    color:#ffffff;
+    padding:1em 0 1em 1em;
+    text-decoration: none;
+}
+/*change the block color on hover*/
+li a:hover{
+    background-color: #555;
+    color:#99ffff;
+}
+
+section {
+    list-style-type: none;
+    float:right;
+    width:85%;
+    height:auto;
+    background-color:#A0A0A0;
+    clear:right;
+}
+
+div.img {
+    text-align: center;
+    margin: 2em;
+    border: 1px solid #ccc;
+    float:left;
+    width: 20em;
+}	
+
+div.img:hover {
+    border: 1px solid #777;
+}
+
+div.img img {
+    width: auto;
+    height: 10em;
+    img-align: center;
+}
+
+div.desc {
+    padding: 0.1em;
+    text-align: center;
+    height: 5em;
+}
+
+
+
+
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+/* Caption of Modal Image */
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+/* Add Animation */
+.modal-content, #caption {    
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+
+@keyframes zoom {
+    from {transform:scale(0.1)} 
+    to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+
+footer {
+    list-style-type: none;
+    background-color:#99CCFF;
+    color:black;
+    clear:both;
+    text-align:center;	 	 
+}
+</style>
+</head>
+<body>
+
+<header>
+<h1>Raccoon Comics 浣熊的漫画 [work in progress]</h1>
+<h2>Current weibo address:
+<a href="http://weibo.com/p/1005056021694967">weibo.com/p/1005056021694967</a></h2>
+</header>
+
+<nav>
+<font size=4em>
+<li>
+<a href="http://people.ucsc.edu/~zhon4/index.html">返回主页  Back to main page.</a>
+</li>
+
+<li>
+<a href="raccoon_comics/all.html">合集  All works</a>
+</li>
+</font>
+</nav>
+
+<section style="line-height: 200%" >
+<p>
+<img src="raccoon_comics/icon.jpg" align="left" hspace="20" height=10% width=10% >
+<h1>Raccoon （or Fiery aggressive Raccoon, Chinese:侵略如火者浣熊）</h1>
+<font size=5em >Raccoon is a skillful artist on Chinese social network"weibo"(microblog). I am his friend and I'm proud to be authorized to set up this online backup website for Raccoon's works. His weibo account have been eliminated several times due to online censorship on Chinese internet so this website will serve as a backup gallery of his work.
+</font>
+</p>
+</section>
+
+<section style="line-height: 200%" >
+
+<div class="responsive"><div class="img">
+    <img src="raccoon_comics/r161016.jpg" alt="test" width="10em" height="10em">
+  <div class="desc">an unexpeted sexual experience</div>
+</div></div>
+
+<div class="responsive"><div class="img">
+    <img src="raccoon_comics/r161009.jpg" alt="test" width="10em" height="10em">
+  <div class="desc">the donkey leader</div>
+</div></div>
+
+<div class="responsive"><div class="img">
+    <img src="raccoon_comics/r161006.jpg" alt="test" width="10em" height="10em">
+  <div class="desc">"his tie always match hers"</div>
+</div></div>
+
+<div class="responsive"><div class="img">
+    <img src="raccoon_comics/r161001.jpg" alt="test" width="10em" height="10em">
+  <div class="desc">Winston Smith in 1984</div>
+</div></div>
+
+<div class="responsive"><div class="img">
+    <img src="raccoon_comics/r160904.jpg" alt="test" width="10em" height="10em">
+  <div class="desc">raccoon in flame</div>
+</div></div>
+
+<div class="responsive"><div class="img">
+    <img src="raccoon_comics/r160903.jpg" alt="test" width="10em" height="10em">
+  <div class="desc">tear gas</div>
+</div></div>
+
+<div class="responsive"><div class="img">
+    <img src="raccoon_comics/r160829.jpg" alt="test" width="10em" height="10em">
+  <div class="desc">patient of Yang Yongxin</div>
+</div></div>
+
+<div class="responsive"><div class="img">
+    <img src="raccoon_comics/r160828.jpg" alt="test" width="10em" height="10em">
+  <div class="desc">Takeshi Kitano</div>
+</div></div>
+
+<div class="responsive"><div class="img">
+    <img src="raccoon_comics/r160630.jpg" alt="test" width="10em" height="10em">
+  <div class="desc">"we will smash the head of whoever opposes chairman Mao!"</div>
+</div></div>
+
+<div class="responsive"><div class="img">
+    <img src="raccoon_comics/r160505.jpg" alt="test" width="10em" height="10em">
+  <div class="desc">raccoon at 熊也餐厅“hard boiled wonderland”(a restaurant in Beijing)</div>
+</div></div>
+
+<div class="responsive"><div class="img">
+    <img src="raccoon_comics/r160427.jpg" alt="test" width="10em" height="10em">
+  <div class="desc">Red Rock: Revenge for the people!</div>
+</div></div>
+
+
+
+</font>
+
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+  <span class="close">×</span>
+  <img class="modal-content" id="img01">
+  <div id="caption"></div>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+
+// Get all images and insert the clicked image inside the modal
+// Get the content of the image description and insert it inside the modal image caption
+var images = document.getElementsByTagName('img');
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+var i;
+for (i = 0; i < images.length; i++) {
+   images[i].onclick = function(){
+       modal.style.display = "block";
+       modalImg.src = this.src;
+       modalImg.alt = this.alt;
+       captionText.innerHTML = this.nextElementSibling.innerHTML;
+   }
+}
+</script>
+
+</section>
+
+<footer>
+
+<li>
+<a href="index.html"><font size=4em>BACK to main page</a>
+</li>
+<font size=4em>Responsive Web Design is applied on this webpage. Try to view this page on cellphone!</font>
+</footer>
+
+</body>
+</html>

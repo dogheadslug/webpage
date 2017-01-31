@@ -1,0 +1,89 @@
+﻿<html>
+  <head>
+    <title>Doghead's hut</title>
+    <link href="stupid1.css" rel="stylesheet">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" 
+	rel="stylesheet">
+    <meta charset="utf-8">
+	
+  </head>
+  
+  <body>
+    <header class="container center padded blue">
+	  <div class="threequarters">
+	  <a href="index.html"><font color="white">Zhihao Hong's personal webpage</font></a>
+	  
+	  <ul class="menu right">
+        <li><a class="black">Menu</a>
+          <ul>
+            <li><a>Aaa</a></li>
+            <li><a>Bbb</a></li>
+            <li><a>Ccc</a></li>
+          </ul>              
+        </li>
+        <!--li style="width:100px"></li!-->
+      </ul>
+	  
+	  <h2 class="padded"><font>How to get rich (Nope)</font></h2>
+	  </div>
+	</header>
+	
+	<div class="padded container center aqua">
+	  <div class="threequarters">
+	    <a class="btn rounded navy" 
+	    href="index.html"><h6>Home</h6></a>
+	    <a class="btn rounded navy pulse" 
+	    href="comics_index.html"><h6>Doghead comics</h6></a>
+	    <a class="btn rounded navy" 
+	    href="raccoon_comics.html"><h6>Raccoon comics</h6></a>
+	    <a class="btn rounded navy" 
+	    href="gallery_armored.html"><h6>gallery</h6></a>
+	  </div>
+	</div>
+    
+	<div class="container center padded">
+	<div class="container center threequarters">
+	  <div class="padded center">
+      <img src="comics/MakeMoney.jpg" alt="make money" >
+
+      <font size=5em>
+      <p>generate a random <a href="http://www.calottery.com/play/draw-games/powerball">POWERBALL </a> combination</p>
+
+      <button class="btn navy large rounded" onclick="myFunction()" >Go</button>
+      <p id="regnum"></p>
+      <p id="sepnum"></p>
+      </font>
+	  </div>
+	</div>
+	</div>
+	
+<script>
+
+function myFunction(){
+var max = 69;
+var min = 1;
+var points = [0,0,0,0,0];
+var random = Math.floor(Math.random() * (max - min + 1)) + min;
+var i = 0;
+var tmp = 0;
+while(i<5){
+    random = Math.floor(Math.random() * (max - min + 1)) + min;
+	points[i] = random;
+	while(points[0]==random||points[1]==random||points[2]==random||
+	points[3]==random||points[4]==random){
+		random = Math.floor(Math.random() * (max - min + 1)) + min;
+		//points[i] = random;
+	}
+	points[i] = random;
+	i++;
+}
+    var sep = Math.floor(Math.random() * (26)) + 1;
+	points.sort(function(a, b){return a - b});
+	document.getElementById("sepnum").innerHTML = "special number is "+sep;
+	document.getElementById("regnum").innerHTML = points;
+}
+</script>
+
+
+</body>
+</html>

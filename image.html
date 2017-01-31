@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<title>image tests</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+.animate-right{position:relative;-webkit-animation:animatetop 1s;animation:animatetop 1s}
+@-webkit-keyframes animatetop{from{right:-300px;opacity:0} to{right:0;opacity:1}}
+@keyframes animatetop{from{right:-300px;opacity:0} to{right:0;opacity:1}}
+</style>
+<body>
+
+
+<div class="w3-content w3-display-container" style="max-width:800px">
+  <img class="mySlides animate-right" src="gallery_armored/1944-LT-M24.jpg" style="width:100%">
+  <img class="mySlides animate-right" src="gallery_armored/1953-LT-M41.jpg" style="width:100%">
+  <img class="mySlides animate-right" src="gallery_armored/1967-LT-M551.jpg" style="width:100%">
+  
+</div>
+
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 7500);    
+}
+</script>
+
+</body>
+</html>
+
+
+</body>
+</html> 
