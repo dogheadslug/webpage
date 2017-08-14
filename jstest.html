@@ -1,0 +1,150 @@
+<html>
+  <head>
+    <title>Javascript Testing</title>
+    <link href="stupid1.css" rel="stylesheet">
+	<!--link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" 
+	rel="stylesheet"-->
+    <meta charset="utf-8">
+	
+  </head>
+  
+  <body>
+    <header class="container center padded blue">
+	  <div class="threequarters">
+	  <a href="index.html"><font color="white">Zhihao Hong's personal webpage</font></a>
+	  
+	  <ul class="menu right">
+        <li><a class="black">Menu</a>
+          <ul>
+            <li><a>Aaa</a></li>
+            <li><a>Bbb</a></li>
+            <li><a>Ccc</a></li>
+          </ul>              
+        </li>
+        <!--li style="width:100px"></li!-->
+      </ul>
+	  
+	  <h2 class="padded"><font>Javascript Testing </font></h2>
+	  </div>
+	</header>
+	
+	<div class="padded container center aqua">
+	  <div class="threequarters">
+	    <a class="btn rounded navy" 
+	    href="index.html"><h6>Home</h6></a>
+	    <a class="btn rounded navy pulse" 
+	    href="comics_index.html"><h6>Doghead comics</h6></a>
+	    <a class="btn rounded navy" 
+	    href="raccoon_comics.html"><h6>Raccoon comics</h6></a>
+	    <a class="btn rounded navy" 
+	    href="gallery_armored.html"><h6>gallery</h6></a>
+	    <a class="btn rounded navy" 
+	    href="makeMoney.html"><h6>JS</h6></a>
+		<a class="btn rounded navy" 
+	    href="https;//github.com/dogheadslug"><h6>github</h6></a>
+	  </div>
+	</div>
+	
+	<div class="container center padded">
+	<div class="container center threequarters">
+	  <div class=" padded third">
+	    <p class="padded silver">file pic</p>
+      </div>
+	  <div class=" padded twothirds">
+	    <div class="padded silver">
+	      <h3> click on a button will show different set of images</h3>
+		  <p>XML database in use.</p>
+
+		  <br>
+		  
+		  <button class="btn round navy large" onclick="showSet1()">set 1</button>
+		  <button class="btn round navy large" onclick="showSet2()">set 2</button>
+		  <button class="btn round navy large" onclick="showSet3()">set 3</button>
+		  
+		  <div class="center">
+			<table id="demo"></table>
+		  </div>
+		
+		  <!--div id="div1"><ul id="imgList"></ul></div-->
+		  
+		</div>
+      </div>
+	</div>
+	</div>
+	
+	<script>
+	var roomnum = null;//the current room selection
+	function showSet1(){
+		roomnum = "R130";//room selection
+		loadXMLDoc();
+	}
+	
+	function showSet2(){
+		roomnum = "R145";//room selection
+		loadXMLDoc();
+	}
+	
+	function showSet3(){
+		roomnum = "R159";//room selection
+		loadXMLDoc();
+	}
+
+	//https://www.w3schools.com/xml/tryit.asp?filename=tryxml_display_table
+	//XML function, get actual data from XML database
+
+	//it turned out that xml file name should be different from html file name
+	
+	function loadXMLDoc() {
+		var xmlhttp = new XMLHttpRequest();
+		xmlhttp.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+				getDataSet(this);
+			}
+			//else alert("database not ready yet!");
+		};
+		xmlhttp.open("GET", "db_kresge.xml", true);//get data from database
+		xmlhttp.send();
+	}
+	
+	//get a specific set of data from database
+	function getDataSet(xml) {
+		var i;
+		var xmlDoc = xml.responseXML;
+		var table="<tr><th>Image</th><th>Discription</th></tr>";
+		var x = xmlDoc.getElementsByTagName(roomnum);
+		for (i = 0; i <x.length; i++) { 
+			table += "<tr><td><img src=" +
+			x[i].getElementsByTagName("IMGSRC")[0].childNodes[0].nodeValue +
+			"></img></td><td>" +
+			x[i].getElementsByTagName("DSCPT")[0].childNodes[0].nodeValue +
+			"</td></tr>";
+		}
+		document.getElementById("demo").innerHTML = table;
+	}
+	
+	</script>
+	
+	<div>
+	
+	</div>
+	
+		<!--
+		<imgsrc>"/slugtrail/E1.jpg"</imgsrc>
+		<dscrpt>E1</dscrpt>
+	
+	
+		<imgsrc>"/slugtrail/E2.jpg"</imgsrc>
+		<dscrpt>E2</dscrpt>
+	
+	
+		<imgsrc>"./slugtrail/arcenter.jpg"</imgsrc>
+		<dscrpt>arcenter</dscrpt>
+	
+	
+		<imgsrc>"./slugtrail/merrill.jpg"</imgsrc>
+		<dscrpt>merrill</dscrpt>
+	
+	
+		<imgsrc>"./slugtrail/crown.jpg"</imgsrc>
+		<dscrpt>crown</dscrpt>
+	-->

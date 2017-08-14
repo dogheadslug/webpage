@@ -1,0 +1,166 @@
+<head>
+  <link ref="stylesheet" href="index.css" type="text/css" />
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>SlugTrail</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+  <link rel="stylesheet" href="app.css">
+  <link rel="stylesheet" href="stupid1.css" type="text/css" />  
+  <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+
+  <style>
+  .nodisplay{
+    display:none;
+}
+  </style>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js">
+    $("table tr").each(function() {        
+		var cell = $.trim($(this).find('th').text());
+		if (cell.length == 0){
+			console.log('empty');
+			//$(this).addClass('nodisplay');
+			$(this).addClass('nodisplay');
+		}                   
+		else{
+			$(this).removeClass('nodisplay');
+		}
+	});
+  </script>
+</head>
+<body>
+    <p id="p1"></p>
+<!--    <input type=text" id="myInput" onkeyup="myFunction()" 
+           placeholder="Search for rooms..">-->
+    <div class="header">
+        <br/>
+        <div class="center"> <h1>Kresge College</h1></div>
+        <div class ="border">
+            <div class ="center padded">
+                <button class="btn yellow rounded" onclick="showSet1()">159 (Seminar Room)</button>  
+                <button class="btn yellow rounded" onclick="showSet2()">194</button>
+                <button class="btn yellow rounded" onclick="showSet3()">317</button>
+                <a href="#" class="btn yellow rounded">319</a>
+                <a href="#" class="btn yellow rounded">321</a>
+                <a href="#" class="btn yellow rounded">323</a>
+                <button class="btn yellow rounded" onclick="showSet3()">325</button>
+                <a href="#" class="btn yellow rounded">327</a>
+            </div>
+        </div> 
+    </div>
+    <!--div class="threequarter container padded center"-->
+	<table class="center">
+
+        <tr>
+		<th><img class="half" id="img_slot1"></th>
+		<th><p class="fill" id="txt_slot1"></p></th></tr>
+		<br>
+		
+		<tr>
+		<th><img id="img_slot2" ></th>
+		<th><p id="txt_slot2" style="float: left"></p></th>
+		<br>
+		
+		<tr>
+		<th><img id="img_slot3" ></th>
+		<th><p id="txt_slot3" style="float: left"></p></th>
+		<br>
+    </table>
+	<!--/div-->
+    <!--ul id="imgList"></ul-->
+    
+  
+<!--    <ul class="menu">
+      <li><a href="#">159 (Seminar Room)</a></li>  
+      <li><a href="#">194</a></li>
+      <li><a href="#">317</a></li>
+      <li><a href="#">319</a></li>
+      <li><a href="#">321</a></li>
+      <li><a href="#">323</a></li>
+      <li><a href="#">325</a></li>
+      <li><a href="#">327</a></li>-->
+   <div ng-view></div>
+
+   
+
+	
+    <script>
+	function showSet1(){
+		//showImg(name of image slot, image src);
+	    showImg("img_slot1","./slugtrail-colleges and departments/1-Oakes.jpg");
+		//showImg(name of text slot, content of text);
+		showTxt("txt_slot1","this is test text");
+		showImg("img_slot2","./slugtrail-colleges and departments/kresge.jpg");
+		showTxt("txt_slot2","this is more test text");
+		showImg("img_slot3","./slugtrail-colleges and departments/oakes.jpg");
+
+	}
+	
+	function showSet2(){
+	    showImg("img_slot1","./slugtrail-colleges and departments/E2.jpg");
+		showTxt("txt_slot1","this is more text");
+		showImg("img_slot2","./slugtrail-colleges and departments/E1.jpg");
+		showTxt("txt_slot2","set 2 text");
+		showImg("img_slot3","./slugtrail-colleges and departments/arcenter.jpg");
+	}
+	
+	function showSet3(){
+	    showImg("img_slot1","./slugtrail-colleges and departments/merrill.jpg");
+		showTxt("txt_slot1","set 3 txt");
+		showImg("img_slot2","./slugtrail-colleges and departments/crown.jpg");
+		cleanSlot("txt_slot2");
+		cleanSlot("img_slot3");
+	}
+	
+	function showImg(slot_num, src){
+		var img = document.createElement("img");
+		var snum = slot_num;
+		img.src = src;
+		document.getElementById(slot_num).src=img.src;
+	}
+	
+	function showTxt(slot_num, text){
+		var p = document.createElement("p");
+		var snum = slot_num;
+		//var th_content = text;
+		document.getElementById(slot_num).innerHTML = text;
+	}
+	
+	//remove the content of a slot
+	function cleanSlot(slot_name){
+		document.getElementById(slot_name).innerHTML = "";
+		document.getElementById(slot_name).src = "";
+	}
+	
+	/*function cleanImg(slot_name){
+		document.getElementById(slot_name).src = "#";
+	}*/
+	
+	$("table tr").each(function() {        
+		var cell = $.trim($(this).find('th').text());
+		if (cell.length == 0){
+			console.log('empty');
+			$(this).addClass('nodisplay');
+		}                   
+	});
+
+    
+    </script>
+  <!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+  -->
+  
+  <!--script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="app.js"></script>
+  <script src="view1/view1.js"></script>
+  <script src="view2/view2.js"></script>
+  <script src="components/version/version.js"></script>
+  <script src="components/version/version-directive.js"></script>
+  <script src="components/version/interpolate-filter.js"></script-->
+
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+</body>
+</html>
